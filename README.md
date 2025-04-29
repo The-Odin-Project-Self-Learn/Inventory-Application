@@ -1,1 +1,1 @@
-# Inventory-Application
+Inventory management app for imaginary store
