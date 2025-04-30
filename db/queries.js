@@ -5,6 +5,14 @@ async function getAllCategories() {
     return result.rows;
 }
 
+async function createNewCategory(categoryName) {
+    await pool.query(
+        "INSERT INTO genres (genre_name) VALUES ($1)",
+        [categoryName]
+    );
+}
+
 module.exports = {
     getAllCategories,
+    createNewCategory,
 };

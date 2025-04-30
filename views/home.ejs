@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Homepage</title>
+  </head>
+  <body>
+    <div id = "home-container">
+      <div id = "title-container">
+        <h1>Game Inventory</h1>
+      </div>
+      <div id = "category-container"> 
+        <% rows.forEach((row) => { %>
+          <%- include('categories/category.ejs', {row: row}); %>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>
