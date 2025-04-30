@@ -19,6 +19,13 @@ body {
     min-height: 100vh;
 }
 
+#title-and-form-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-items: center;
+}
+
 #title-container {
     display: flex;
     flex-direction: row;

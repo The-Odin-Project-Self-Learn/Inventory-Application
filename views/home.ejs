@@ -5,8 +5,11 @@
   </head>
   <body>
     <div id = "home-container">
-      <div id = "title-container">
-        <h1>Game Inventory</h1>
+      <div id = "title-and-form-container">
+        <div id = "title-container">
+          <h1>Game Inventory</h1>
+        </div>
+        <%- include('forms/newCategoryForm.ejs') %>
       </div>
       <div id = "category-container"> 
         <% rows.forEach((row) => { %>
