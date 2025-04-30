@@ -1,8 +1,13 @@
 const express = require('express'); //loads the Express module
-const app = express(); //creates Express application
-app.set("view engine", "ejs");
-app.use(express.urlencoded({extended: true}));
 const router = require('./routes/router.js');
+const path = require("node:path");
+
+const app = express(); //creates Express application
+const assetsPath = path.join(__dirname, "public");
+
+app.set("view engine", "ejs");
+app.use(express.static(assetsPath));
+app.use(express.urlencoded({extended: true}));
 
 app.use("/", router);
 
