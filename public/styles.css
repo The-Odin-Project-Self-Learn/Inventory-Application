@@ -1,5 +1,6 @@
 h1 {
     color: white;
+    margin-bottom: 0;
 }
 
 p {
@@ -8,6 +9,11 @@ p {
 
 body {
     margin: 0;
+}
+
+form {
+    width: 300px;
+    text-align: center;
 }
 
 /* ID selectors */
@@ -19,10 +25,9 @@ body {
     min-height: 100vh;
 }
 
-#title-and-form-container {
+#form-title-container {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -30,6 +35,14 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+}
+
+#form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 #category-container {
