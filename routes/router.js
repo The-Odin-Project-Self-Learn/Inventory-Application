@@ -3,6 +3,7 @@ const router = Router(); //constructs a new instance of a Router object - enable
 const controller = require('../controllers/controller.js');
 
 router.get("/", controller.getHomePage);
+router.get("/genre/:genreName", controller.getCategory);
 router.post("/new-category", controller.createNewCategory);
 
 module.exports = router;

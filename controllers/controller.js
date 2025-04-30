@@ -23,8 +23,22 @@ async function createNewCategory(req, res) {
     }
 }
 
+async function getCategory(req, res) {
+    try {
+        const categoryName = req.params.genreName;
+        const rows = db.getCategory(categoryName);
+        console.log(`${categoryName} games: `, rows);
+        res.render("viewCategory.ejs", {rows: rows});
+    } catch(err) {
+        console.log("Error fetching category: ", err);
+        res.status(500).send("Server error");
+    }
+}
+
+
 module.exports = {
     getHomePage,
     createNewCategory,
+    getCategory,
 };
 
