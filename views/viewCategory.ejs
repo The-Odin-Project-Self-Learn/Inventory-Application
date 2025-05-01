@@ -1,17 +1,17 @@
 <html>
   <head>
     <link rel="stylesheet" href="/styles.css">
-    <title><%= rows.genre %> Games</title>
+    <title><%= categoryName %> Games</title>
   </head>
   <body>
     <div id = "home-container">
       <div id = "form-title-container">
-        <h1><%= rows.genre %> Games</h1>
+        <h1><%= categoryName %> Games</h1>
         <%- include('forms/newGameForm.ejs') %>
       </div>
       <div id = "category-container"> 
         <% rows.forEach((row) => { %>
-          <%- include('categories/category.ejs', {row: row}); %>
+          <%- include('games/game.ejs', {row: row}); %>
         <% }); %>
       </div>
     </div>

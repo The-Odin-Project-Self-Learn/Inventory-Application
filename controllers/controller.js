@@ -28,8 +28,7 @@ async function getCategory(req, res) {
         const categoryName = req.params.genreName;
         const rows = await db.getCategory(categoryName);
         console.log(`${categoryName} games: `, rows);
-        //res.render("viewCategory.ejs", {rows: rows});
-        res.send('games loaded!');
+        res.render("viewCategory.ejs", {categoryName: categoryName, rows: rows});
     } catch(err) {
         console.log("Error fetching category: ", err);
         res.status(500).send("Server error");

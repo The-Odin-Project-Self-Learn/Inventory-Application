@@ -13,7 +13,10 @@ async function createNewCategory(categoryName) {
 }
 
 async function getCategory(categoryName) {
-    //join the game_genres table with the games table and genres table, then filter to only contain rows containing the given genre name
+    //join the "games" table to the "game_genres" table on "game_id"
+    //join the "genres" table to the "game_genres" table on "genre_id"
+    //only keep rows where "genre_name" = categoryName
+    //from this filtered table, select only the rows corresponding to the columns from the "games" table
     const query = `
     SELECT games.* FROM games
     JOIN game_genres ON games.game_id = game_genres.game_id
