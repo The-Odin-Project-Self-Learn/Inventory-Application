@@ -6,5 +6,6 @@ router.get("/", controller.getHomePage);
 router.get("/genre/:genreName", controller.getCategory);
 router.post("/new-category", controller.createNewCategory);
 router.post("/genre/:categoryName/add-game", controller.addGame);
+router.post("/genre/:categoryName/:gameName/delete", controller.deleteGame);
 
 module.exports = router;

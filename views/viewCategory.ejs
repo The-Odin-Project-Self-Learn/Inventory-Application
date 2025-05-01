@@ -9,9 +9,12 @@
         <h1><%= categoryName %> Games</h1>
         <%- include('forms/newGameForm.ejs', {categoryName: categoryName}) %>
       </div>
-      <div id = "game-container"> 
+      <div id = "game-container">
         <% rows.forEach((row) => { %>
-          <%- include('games/game.ejs', {row: row}); %>
+          <div id = "game-button-container">
+            <%- include('games/game.ejs', {row: row}); %>
+            <%- include('buttons/deleteGameButton.ejs', {categoryName: categoryName, row: row}) %>
+          </div> 
         <% }); %>
       </div>
     </div>

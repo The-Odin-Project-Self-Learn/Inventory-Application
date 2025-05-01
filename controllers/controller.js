@@ -50,11 +50,23 @@ async function addGame(req, res) {
     }
 }
 
+async function deleteGame(req, res) {
+    try {
+        const gameName = req.params.gameName;
+        const genre = req.params.categoryName;
+        console.log(`Deleting ${gameName} from ${genre} category`);
+        res.send("Game deleted!");
+    } catch(err) {
+        console.log("Error deleting game: ", err);
+        res.status(500).send("Server error");
+    }
+}
 
 module.exports = {
     getHomePage,
     createNewCategory,
     getCategory,
     addGame,
+    deleteGame,
 };
 
