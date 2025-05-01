@@ -28,7 +28,42 @@ async function getCategory(categoryName) {
 }
 
 async function addGame(categoryName, gameName, gameYear) {
+    const query1 = `
+        INSERT INTO games (title, year)
+        VALUES ($1, $2);
+    `
+    const query2 = `
+        SELECT genre_id FROM genres
+        WHERE genre_name = $1;
+    `
+    const query3 = `
+        SELECT game_id FROM games
+        WHERE title = $1;
+    `
+    const query4 = `
+        INSERT INTO game_genres (game_id, genre_id)
+        VALUES ($1, $2);
+    `
+    if (!(await checkDuplicateGame(gameName))) {
+        await pool.query(query1, [gameName, gameYear]); //add game + year to "games" table
+    }
+    const genreResult = await pool.query(query2, [categoryName]); //object with "rows" attribute, representing desired rows
+    const genreID = genreResult.rows[0].genre_id; //get genreID
+    const gameResult = await pool.query(query3, [gameName]);
+    const gameID = gameResult.rows[0].game_id; //get gameID
+    await pool.query(query4, [gameID, genreID]); //add gameID and genreID to "game_genres" table
+}
 
+async function checkDuplicateGame(gameName) {
+    const query0 = `
+        SELECT game_id FROM games
+        WHERE title = $1;
+    `
+    const checkDuplicateResult = await pool.query(query0, [gameName]);
+    if (checkDuplicateResult.rows.length > 0) {
+        return true;
+    }
+    return false;
 }
 
 module.exports = {

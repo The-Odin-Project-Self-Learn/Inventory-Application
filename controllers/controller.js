@@ -40,10 +40,9 @@ async function addGame(req, res) {
         const gameCategory = req.params.categoryName;
         const gameName = req.body.name;
         const gameYear = req.body.year;
-        //await db.addGame(gameCategory, gameName, gameYear);
+        await db.addGame(gameCategory, gameName, gameYear);
         console.log(`${gameName} (${gameYear}) added to ${gameCategory} category`);
-        res.send(`Game added!`);
-        //res.redirect(`/genre/${gameCategory}`);
+        res.redirect(`/genre/${gameCategory}`);
 
     } catch(err) {
         console.log("Error adding game to category: ", err);
