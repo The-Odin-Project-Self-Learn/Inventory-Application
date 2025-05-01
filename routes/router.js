@@ -5,5 +5,6 @@ const controller = require('../controllers/controller.js');
 router.get("/", controller.getHomePage);
 router.get("/genre/:genreName", controller.getCategory);
 router.post("/new-category", controller.createNewCategory);
+router.post("/genre/:categoryName/add-game", controller.addGame);
 
 module.exports = router;

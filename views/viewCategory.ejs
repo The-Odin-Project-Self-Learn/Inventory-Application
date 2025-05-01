@@ -7,7 +7,7 @@
     <div id = "home-container">
       <div id = "form-title-container">
         <h1><%= categoryName %> Games</h1>
-        <%- include('forms/newGameForm.ejs') %>
+        <%- include('forms/newGameForm.ejs', {categoryName: categoryName}) %>
       </div>
       <div id = "category-container"> 
         <% rows.forEach((row) => { %>

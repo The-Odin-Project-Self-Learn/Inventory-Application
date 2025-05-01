@@ -27,8 +27,13 @@ async function getCategory(categoryName) {
     return result.rows;
 }
 
+async function addGame(categoryName, gameName, gameYear) {
+
+}
+
 module.exports = {
     getAllCategories,
     createNewCategory,
     getCategory,
+    addGame,
 };
