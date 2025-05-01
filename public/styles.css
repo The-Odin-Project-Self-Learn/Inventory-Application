@@ -1,6 +1,5 @@
 h1 {
     color: white;
-    margin-bottom: 0;
 }
 
 p {
@@ -16,8 +15,8 @@ body {
 }
 
 form {
-    width: 300px;
     text-align: center;
+    color: white;
 }
 
 /* ID selectors */
@@ -53,4 +52,11 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
