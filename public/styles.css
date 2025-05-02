@@ -82,3 +82,7 @@ form {
     align-items: center;
     gap: 20px;
 }
+
+#delete-form {
+    margin-top: 0px;
+}
