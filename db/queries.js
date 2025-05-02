@@ -126,10 +126,6 @@ async function deleteGame(gameName, genre) {
         DELETE FROM game_genres
         WHERE game_id = $1 AND genre_id = $2;
     `
-    const query4 = `
-        DELETE FROM games
-        WHERE game_id = $1;
-    `
     const gameResult = await pool.query(query1, [gameName]);
     const gameID = gameResult.rows[0].game_id;
     const genreResult = await pool.query(query2, [genre]);
